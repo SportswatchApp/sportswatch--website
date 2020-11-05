@@ -4,13 +4,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './index.css';
-import history from "./history";
-import {Router, Route} from "react-router-dom";
 
 ReactDOM.render(
-    <Router history={history}>
-        <Route path="/" component={App}/>
-    </Router>,
+    <App/>,
     document.getElementById("root")
 );
 
