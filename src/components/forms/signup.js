@@ -46,6 +46,10 @@ class SignupForm extends React.Component {
         return error.response.status + ' ' + error.response.data.error;
     }
 
+    handleCloseWindow = e => {
+        window.close();
+    }
+
     render() {
         const {data, errors, success} = this.state;
         return (
@@ -108,7 +112,7 @@ class SignupForm extends React.Component {
                         Når du trykker Opret accepterer du også vores <a href={"/betingelser"}>betingelser</a>
                     </p>
                     <button type="submit" className="btn btn-primary float-right">Opret</button>
-                    <button type="button" className="btn btn-link float-left">Annullér</button>
+                    <button type="button" className="btn btn-link float-left" onClick={this.handleCloseWindow}>Annullér</button>
                 </form>
             </div>
         )
