@@ -64,6 +64,7 @@ class SignupForm extends React.Component {
                                value={data.username}
                                placeholder={"Email"}
                                onChange={this.onChange}
+                               autocapitalize="none"
                                required/>
                         <small id="emailHelp" className="form-text text-muted">
                             Indtast en gyldig email adresse
