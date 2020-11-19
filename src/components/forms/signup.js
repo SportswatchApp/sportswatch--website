@@ -27,6 +27,10 @@ class SignupForm extends React.Component {
             data: {...this.state.data, [e.target.name]: e.target.value}
         });
 
+    onEmailChange = e => {
+        this.setState({email: ""})
+    }
+
     handleSignup = e => {
         e.preventDefault();
         var data = JSON.stringify(this.state.data);
@@ -63,8 +67,7 @@ class SignupForm extends React.Component {
                                name="email"
                                value={data.username}
                                placeholder={"Email"}
-                               onChange={this.onChange}
-                               autocapitalize="none"
+                               onChange={this.onEmailChange}
                                required/>
                         <small id="emailHelp" className="form-text text-muted">
                             Indtast en gyldig email adresse
