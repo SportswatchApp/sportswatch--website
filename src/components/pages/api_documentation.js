@@ -5,7 +5,7 @@ class ApiDocumentationPage extends React.Component {
     render() {
         return (
             <RedocStandalone
-                specUrl="http://127.0.0.1:8000/openapi/"
+                specUrl="https://test.sportswatchapp.dk/openapi/"
                 options={{
                     theme: { colors: { primary: { main: '#dd5522' } } },
                 }}
