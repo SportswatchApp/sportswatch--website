@@ -28,17 +28,21 @@ class SignupForm extends React.Component {
         });
 
     onEmailChange = e => {
-        this.setState({email: ""})
+        this.setState({
+            data: {...this.state.data, 'email': e.target.value.toLowerCase()}
+        });
     }
 
     handleSignup = e => {
         e.preventDefault();
         var data = JSON.stringify(this.state.data);
+        console.log(data);
         console.log(api.user);
         api.user.create(data).then(user => {
             this.setState({success: 'Bruger oprettet'});
             this.setState({errors: ''});
         }).catch((error) => {
+            console.log(error.response);
             if(error.response) {
                 this.setState({errors: error.response.data.detail});
                 this.setState({success: ''});
